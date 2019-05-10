@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides>
+
+    <ion-slide *ngFor="let ponto of pontos">
+      <ion-card>
+        <img src="{{ponto.img}}" alt="">
+
+        <ion-card-header>
+          <ion-card-title>{{ponto.title}}</ion-card-title>
+          <ion-card-subtitle>{{ponto.local}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-item>
+          <ion-icon name="thumbs-up" slot="start" (click)="like(ponto)"></ion-icon>
+          <ion-badge color="success">{{ponto.like}}</ion-badge>
+
+          <ion-icon name="thumbs-up" slot="end" (click)="dislike(ponto)"></ion-icon>
+          <ion-badge color="dark" slot="end">{{ponto.deslike}}</ion-badge>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
